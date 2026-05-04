@@ -18,14 +18,14 @@ export default function FloatingBookingButton() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    let timerId: number | null = null;
+    let timerId: NodeJS.Timeout | null = null;
     let armed = false;
 
     const onScroll = () => {
       if (window.scrollY < 80) return;
       if (armed) return;
       armed = true;
-      timerId = window.setTimeout(() => {
+      timerId = setTimeout(() => {
         setShow(true);
       }, 3000);
     };
@@ -33,7 +33,7 @@ export default function FloatingBookingButton() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);
-      if (timerId) window.clearTimeout(timerId);
+      if (timerId) clearTimeout(timerId);
     };
   }, [pathname]);
 
@@ -67,4 +67,3 @@ export default function FloatingBookingButton() {
     </a>
   );
 }
-

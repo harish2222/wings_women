@@ -164,9 +164,9 @@ export default function Home() {
         </div>
         <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <Link
+<Link
               key={service}
-              href="/services"
+              href={`/services/${service.toLowerCase().replace(/ & /g, "-").replace(/\s+/g, "-")}`}
               className="group rounded-2xl border border-[#C8A2C8]/40 bg-white/85 p-5 transition-all duration-300 hover:border-[#A47DAB] hover:bg-[#A47DAB]/5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A47DAB] dark:border-[#B899BF]/40 dark:bg-[#2d2d2d]"
             >
               <h3 className="text-base font-semibold">{service}</h3>

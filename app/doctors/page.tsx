@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Script from "next/script";
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState } from "react";
 
 interface Doctor {
   id: string;
@@ -49,14 +49,15 @@ export default function DoctorsPage() {
   const [selectedDoctorId, setSelectedDoctorId] = useState<string | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  const handleSelectDoctor = (id: string) => {
+    setSelectedDoctorId(id);
+    setCurrentSlide(0);
+  };
+
   const selectedDoctor = useMemo(
     () => doctors.find((doctor) => doctor.id === selectedDoctorId) ?? null,
     [selectedDoctorId],
   );
-
-  useEffect(() => {
-    setCurrentSlide(0);
-  }, [selectedDoctorId]);
 
   return (
     <section className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8">

@@ -41,7 +41,7 @@ describe("Integration tests", () => {
   it("theme choice persists through localStorage", async () => {
     const user = userEvent.setup();
     customRender(<Navbar />);
-    await user.click(screen.getByRole("button", { name: /switch to dark mode/i }));
+    await user.click(screen.getByRole("switch", { name: /toggle theme/i }));
     expect(window.localStorage.getItem("theme")).toBe("dark");
   });
 });

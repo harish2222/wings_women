@@ -6,13 +6,13 @@ describe("DoctorsPage", () => {
   it("displays doctor information cards", () => {
     customRender(<DoctorsPage />);
     expect(screen.getByRole("heading", { name: /our expert team/i })).toBeInTheDocument();
-    expect(screen.getByText(/dr\. meera shah/i)).toBeInTheDocument();
-    expect(screen.getByText(/mbbs, ms, mrcog london/i)).toBeInTheDocument();
+    expect(screen.getByText(/dr\. b\. viswanath/i)).toBeInTheDocument();
+    expect(screen.getByText(/mbbs, dgo, dnb/i)).toBeInTheDocument();
   });
 
   it("shows initials placeholder for doctor image area", () => {
     customRender(<DoctorsPage />);
-    expect(screen.getByText("DM")).toBeInTheDocument();
+    expect(screen.getByAltText(/dr\. b\. viswanath/i)).toBeInTheDocument();
   });
 
   it("opens modal on View Full Profile and includes WhatsApp booking", async () => {
@@ -24,7 +24,7 @@ describe("DoctorsPage", () => {
 
     expect(screen.getByRole("dialog")).toBeInTheDocument();
     const dialog = screen.getByRole("dialog");
-    expect(within(dialog).getByRole("heading", { name: /dr\. meera shah/i })).toBeInTheDocument();
+    expect(within(dialog).getByRole("heading", { name: /dr\. b\. viswanath/i })).toBeInTheDocument();
     expect(within(dialog).getByRole("link", { name: /book appointment/i })).toHaveAttribute(
       "href",
       expect.stringContaining("wa.me"),

@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 function MoonIcon() {
   return (
@@ -27,7 +27,11 @@ function SunIcon() {
 
 export function ThemeToggle() {
   const { setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+
+  const [mounted, setMounted] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return true;
+  });
 
   useEffect(() => {
     setMounted(true);
@@ -41,9 +45,9 @@ export function ThemeToggle() {
         aria-checked={false}
         aria-label="Toggle theme"
         suppressHydrationWarning
-        className="relative h-9 w-16 rounded-full border border-[#C8A2C8]/50 bg-[#F5F0E8] p-1 transition-colors hover:bg-[#C8A2C8]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A47DAB] dark:border-[#B899BF]/50 dark:bg-[#3d3d3d] dark:hover:bg-[#4d4d4d]"
+        className="relative h-10 w-16 rounded-full border border-[#C8A2C8]/50 bg-[#F5F0E8] p-1 transition-colors hover:bg-[#C8A2C8]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A47DAB] dark:border-[#B899BF]/50 dark:bg-[#3d3d3d] dark:hover:bg-[#4d4d4d]"
       >
-        <span className="inline-flex h-7 w-7 translate-x-7 items-center justify-center rounded-full bg-[#A47DAB] text-white shadow-md transition-transform duration-300" />
+        <span className="inline-flex h-8 w-8 translate-x-6 items-center justify-center rounded-full bg-[#A47DAB] text-white shadow-md transition-transform duration-300" />
       </button>
     );
   }
@@ -58,11 +62,11 @@ export function ThemeToggle() {
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label="Toggle theme"
       suppressHydrationWarning
-      className="relative h-9 w-16 rounded-full border border-[#C8A2C8]/50 bg-[#F5F0E8] p-1 transition-colors hover:bg-[#C8A2C8]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A47DAB] dark:border-[#B899BF]/50 dark:bg-[#3d3d3d] dark:hover:bg-[#4d4d4d]"
+      className="relative h-10 w-16 rounded-full border border-[#C8A2C8]/50 bg-[#F5F0E8] p-1 transition-colors hover:bg-[#C8A2C8]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A47DAB] dark:border-[#B899BF]/50 dark:bg-[#3d3d3d] dark:hover:bg-[#4d4d4d]"
     >
       <span
-        className={`inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#A47DAB] text-white shadow-md transition-transform duration-300 ${
-          isDark ? "translate-x-0" : "translate-x-7"
+        className={`inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#A47DAB] text-white shadow-md transition-transform duration-300 ${
+          isDark ? "translate-x-0" : "translate-x-6"
         }`}
       >
         {isDark ? <MoonIcon /> : <SunIcon />}

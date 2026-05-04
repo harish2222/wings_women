@@ -6,6 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import FloatingBookingButton from "@/components/floating-booking-button";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
@@ -129,6 +130,7 @@ gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', { anonymize_ip: true });`}
               {children}
             </main>
             <Footer />
+            <FloatingBookingButton />
           </div>
         </ThemeProvider>
         <Analytics />

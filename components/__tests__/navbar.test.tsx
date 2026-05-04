@@ -39,7 +39,7 @@ describe("Navbar", () => {
   it("dark mode toggle calls setTheme", async () => {
     const user = userEvent.setup();
     customRender(<Navbar />);
-    const themeButton = screen.getByRole("button", { name: /switch to dark mode/i });
+    const themeButton = screen.getByRole("switch", { name: /toggle theme/i });
     await user.click(themeButton);
     expect(mockSetTheme).toHaveBeenCalledWith("dark");
   });

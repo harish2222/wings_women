@@ -177,9 +177,9 @@ const onSubmit = (data: ContactFormValues) => {
                   className="mt-1 h-4 w-4 accent-[#A47DAB]"
                   {...register("gdprConsent", { required: "Consent is required" })}
                 />
-                <span>
+<span>
                   I consent to Wings Women Center storing and processing my submitted data for appointment-related
-                  communication in accordance with GDPR.
+                  communication.
                 </span>
               </label>
               {errors.gdprConsent ? <p className="mt-1 text-xs text-red-600">{errors.gdprConsent.message}</p> : null}
