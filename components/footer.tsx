@@ -19,14 +19,14 @@ const legalLinks = [
   { href: "/terms", label: "Terms & Conditions" },
 ];
 
-const social = ["Facebook", "Instagram", "LinkedIn"];
+const social = ["Facebook", "Instagram", "YouTube"];
 
 export default function Footer() {
   return (
     <footer className="mt-auto border-t border-[#C8A2C8]/40 bg-[#FAF6F0] text-[#2C2C2C] dark:border-[#B899BF]/40 dark:bg-[#2d2d2d] dark:text-[#E5E5E5]">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 py-12 sm:px-8 lg:grid-cols-3 lg:px-8">
         <section aria-label="Clinic information" className="space-y-3">
-          <h2 className="text-lg font-semibold">WINGS WOMENS CENTRE</h2>
+          <h2 className="text-lg font-semibold">Wings Women Center</h2>
           <p className="text-sm font-medium italic text-[#A47DAB] dark:text-[#D4B5D4]">
             GIVING BIRTH TO YOUR HOPE
           </p>

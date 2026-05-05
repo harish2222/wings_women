@@ -3,6 +3,8 @@ import Script from "next/script";
 import { getServicesBySlugs } from "@/lib/services";
 
 const requestedServiceSlugs = [
+  "naprotechnology",
+  "ivf-icsi",
   "ovulation-induction-timed-intercourse",
   "pcos-care",
   "endometriosis",
@@ -13,8 +15,6 @@ const requestedServiceSlugs = [
   "semen-abnormalities",
   "intrauterine-insemination",
   "laparoscopy-hysteroscopy",
-  "naprotechnology",
-  "ivf-icsi",
 ];
 
 const services = getServicesBySlugs(requestedServiceSlugs);

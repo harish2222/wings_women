@@ -20,7 +20,7 @@ const doctors: Doctor[] = [
     name: "Dr. B. Viswanath",
     image: "/media/testimonials/doctor1/doctor1.jpeg",
     primaryQualification: "MBBS, DGO, DNB(AIMS), CCIVF",
-    specializations: ["Reproductive Endocrinology", "PCOS Care", "IVF and IUI"],
+    specializations: ["Natural Conception using NaProTECHNOLOGY", "Reproductive Endocrinology", "PCOS Care", "IVF and IUI"],
     biography:
       "Dr. B. Viswanath is a senior consultant specializing in evidence-based fertility treatment with extensive experience in reproductive medicine. He is dedicated to providing compassionate care and personalized treatment plans for couples seeking fertility assistance.",
     certificates: [

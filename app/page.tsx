@@ -52,12 +52,12 @@ const whyChooseUs = [
 ];
 
 const services = [
+  { name: "Natural Pregnancy (NaPro)", slug: "naprotechnology" },
+  { name: "IVF / ICSI", slug: "ivf-icsi" },
   { name: "Fertility Evaluation", slug: "ovulation-induction-timed-intercourse" },
   { name: "IUI Treatment", slug: "intrauterine-insemination" },
   { name: "PCOS Care", slug: "pcos-care" },
   { name: "Endometriosis Care", slug: "endometriosis" },
-  { name: "Natural Pregnancy (NaPro)", slug: "naprotechnology" },
-  { name: "IVF / ICSI", slug: "ivf-icsi" },
 ];
 
 export default function Home() {
