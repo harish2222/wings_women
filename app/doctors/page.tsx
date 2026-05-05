@@ -40,7 +40,7 @@ const doctors: Doctor[] = [
     primaryQualification: "MBBS, MS, DGO, MRCOG London, Fellow in Oncology",
     specializations: ["High Risk Pregnancy", "Antenatal", "Post Natal Services", "Deliveries"],
     biography:
-      "Dr. Durga Vijaya Sree is a highly qualified specialist with international training in reproductive medicine. Her expertise includes minimally invasive fertility treatments, PCOS management, and comprehensive women's healthcare with a patient-centered approach.",
+      "Her expertise includes high risk pregnancy, antenatal, postnatal care, delivery, and c-section. Dr. Durga Vijaya Sree is a highly qualified obstetrician and gynecologist with extensive experience in managing high-risk pregnancies and comprehensive women's healthcare. She specializes in antenatal care, postnatal services, normal deliveries, and cesarean sections, providing personalized care with a patient-centered approach. Her international training from MRCOG London and fellowship in oncology ensures evidence-based treatment protocols and compassionate care for all patients.",
     certificates: [],
   },
 ];
