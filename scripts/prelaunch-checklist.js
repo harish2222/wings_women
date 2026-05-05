@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable @typescript-eslint/no-require-imports */
 
 /**
  * Pre-Launch Security & Quality Checklist
@@ -11,8 +12,10 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const PRODUCTION_URL = process.env.PRODUCTION_URL || 'https://www.wingswomencenter.com';
 const STAGING_URL = process.env.STAGING_URL || 'https://staging.wingswomencenter.com';
+/* eslint-enable @typescript-eslint/no-unused-vars */
 
 const categories = {
   security: {

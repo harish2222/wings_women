@@ -13,12 +13,14 @@ const requestedServiceSlugs = [
   "semen-abnormalities",
   "intrauterine-insemination",
   "laparoscopy-hysteroscopy",
+  "naprotechnology",
+  "ivf-icsi",
 ];
 
 const services = getServicesBySlugs(requestedServiceSlugs);
 
 export const metadata = {
-  title: "Services - Wings Womens Centre",
+  title: "Services - Wings Women Center",
   description: "Comprehensive fertility, gynecological, reproductive surgery, and support services.",
 };
 
@@ -39,7 +41,7 @@ export default function ServicesPage() {
       </Script>
       <header className="rounded-3xl border border-[#C8A2C8]/40 bg-[#F5F0E8] p-6 dark:border-[#B899BF]/40 dark:bg-[#2d2d2d] sm:p-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#A47DAB] dark:text-[#D4B5D4]">
-          Wings Womens Centre
+          Wings Women Center
         </p>
         <h1 className="mt-3 text-3xl font-semibold text-[#2C2C2C] dark:text-[#E5E5E5] sm:text-4xl">
           Fertility & Women&apos;s Health Services

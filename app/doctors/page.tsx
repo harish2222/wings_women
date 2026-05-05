@@ -20,7 +20,7 @@ const doctors: Doctor[] = [
     name: "Dr. B. Viswanath",
     image: "/media/testimonials/doctor1/doctor1.jpeg",
     primaryQualification: "MBBS, DGO, DNB(AIMS), CCIVF",
-    specializations: ["IVF Counseling", "Reproductive Endocrinology", "High-Risk Pregnancy Care"],
+    specializations: ["Reproductive Endocrinology", "PCOS Care", "IVF and IUI"],
     biography:
       "Dr. B. Viswanath is a senior consultant specializing in evidence-based fertility treatment with extensive experience in reproductive medicine. He is dedicated to providing compassionate care and personalized treatment plans for couples seeking fertility assistance.",
     certificates: [
@@ -38,7 +38,7 @@ const doctors: Doctor[] = [
     name: "Dr. Durga Vijaya Sree",
     image: "/media/testimonials/doctor2/doctor2.jpeg",
     primaryQualification: "MBBS, MS, DGO, MRCOG London, Fellow in Oncology",
-    specializations: ["PCOS & Hormonal Health", "IUI Protocols", "Fertility Preservation"],
+    specializations: ["High Risk Pregnancy", "Antenatal", "Post Natal Services", "Deliveries"],
     biography:
       "Dr. Durga Vijaya Sree is a highly qualified specialist with international training in reproductive medicine. Her expertise includes minimally invasive fertility treatments, PCOS management, and comprehensive women's healthcare with a patient-centered approach.",
     certificates: [],
@@ -119,7 +119,7 @@ export default function DoctorsPage() {
 
             <button
               type="button"
-              onClick={() => setSelectedDoctorId(doctor.id)}
+              onClick={() => handleSelectDoctor(doctor.id)}
               className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#C8A2C8] px-5 py-2.5 text-sm font-semibold text-[#2C2C2C] transition-colors duration-300 hover:bg-[#A47DAB] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A47DAB]"
               aria-label={`View full profile for ${doctor.name}`}
             >

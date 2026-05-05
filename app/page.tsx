@@ -52,12 +52,12 @@ const whyChooseUs = [
 ];
 
 const services = [
-  "Fertility Evaluation",
-  "IVF & IUI Guidance",
-  "High-Risk Pregnancy Care",
-  "PCOS Management",
-  "Gynecologic Oncology Consult",
-  "Menstrual & Hormonal Health",
+  { name: "Fertility Evaluation", slug: "ovulation-induction-timed-intercourse" },
+  { name: "IUI Treatment", slug: "intrauterine-insemination" },
+  { name: "PCOS Care", slug: "pcos-care" },
+  { name: "Endometriosis Care", slug: "endometriosis" },
+  { name: "Natural Pregnancy (NaPro)", slug: "naprotechnology" },
+  { name: "IVF / ICSI", slug: "ivf-icsi" },
 ];
 
 export default function Home() {
@@ -162,14 +162,14 @@ export default function Home() {
             View all services
           </Link>
         </div>
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+<div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-<Link
-              key={service}
-              href={`/services/${service.toLowerCase().replace(/ & /g, "-").replace(/\s+/g, "-")}`}
+            <Link
+              key={service.slug}
+              href={`/services/${service.slug}`}
               className="group rounded-2xl border border-[#C8A2C8]/40 bg-white/85 p-5 transition-all duration-300 hover:border-[#A47DAB] hover:bg-[#A47DAB]/5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A47DAB] dark:border-[#B899BF]/40 dark:bg-[#2d2d2d]"
             >
-              <h3 className="text-base font-semibold">{service}</h3>
+              <h3 className="text-base font-semibold">{service.name}</h3>
               <p className="mt-2 text-sm text-[#2C2C2C]/80 dark:text-[#E5E5E5]/80">
                 Learn more about our treatment approach and consultation process.
               </p>

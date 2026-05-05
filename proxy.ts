@@ -43,13 +43,6 @@ function checkRateLimit(request: NextRequest): boolean {
   return true;
 }
 
-const BLOCKED_IP_TYPES = new Set([
-  "sql",
-  "xss",
-  "command",
-  "template",
-]);
-
 function detectMaliciousInput(input: string): string | null {
   const patterns: Record<string, RegExp> = {
     sql: /(\b(SELECT|INSERT|UPDATE|DELETE|DROP|UNION|ALTER|CREATE|TRUNCATE)\b|--|\/\*|\*\/|';|'--|";|"--)/i,
@@ -110,31 +103,6 @@ export function isValidDoctorId(id: string): boolean {
 
 export function isValidServiceSlug(slug: string): boolean {
   return /^[a-z0-9-]+$/.test(slug) && slug.length <= 100;
-}
-
-function maskSensitiveData(data: Record<string, unknown>): Record<string, unknown> {
-  const sensitiveKeys = new Set([
-    "password",
-    "token",
-    "secret",
-    "apikey",
-    "authorization",
-    "creditcard",
-    "ssn",
-    "dob",
-    "dateOfBirth",
-  ]);
-  
-  const masked = { ...data };
-  
-  for (const key of Object.keys(masked)) {
-    const lowerKey = key.toLowerCase();
-    if (sensitiveKeys.has(lowerKey) || sensitiveKeys.has(key)) {
-      (masked as Record<string, string>)[key] = "***REDACTED***";
-    }
-  }
-  
-  return masked;
 }
 
 export async function proxy(request: NextRequest) {

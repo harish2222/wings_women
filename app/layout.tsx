@@ -103,7 +103,7 @@ gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', { anonymize_ip: true });`}
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "MedicalClinic",
-            name: "Wings Womens Centre",
+            name: "Wings Women Center",
             medicalSpecialty: ["Gynecology", "Fertility", "Obstetrics"],
             telephone: "+91-95027-12812",
             email: "boga.viswanath@gmail.com",

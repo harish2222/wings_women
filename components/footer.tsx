@@ -126,7 +126,7 @@ export default function Footer() {
         <p className="text-base font-semibold italic text-[#A47DAB] dark:text-[#D4B5D4]">
           &quot;We&apos;re not just another Hospital.. We&apos;re an <span className="not-italic font-bold">Experience...</span>&quot;
         </p>
-        <p className="mt-2">© {new Date().getFullYear()} Wings Womens Centre. All rights reserved.</p>
+        <p className="mt-2">© {new Date().getFullYear()} Wings Women Center. All rights reserved.</p>
       </div>
     </footer>
   );

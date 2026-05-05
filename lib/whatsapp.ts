@@ -5,7 +5,7 @@ export interface WhatsAppConfig {
 
 export const whatsappConfig: WhatsAppConfig = {
   phone: "919502712812",
-  clinicName: "Wings Womens Centre",
+  clinicName: "Wings Women Center",
 };
 
 export function createAppointmentMessage(service: string): string {

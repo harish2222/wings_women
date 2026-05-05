@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ThemeToggle } from "./theme-toggle";
 
 const navItems = [
@@ -16,12 +16,6 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-
-  useEffect(() => {
-    if (isMenuOpen) {
-      setIsAnimating(true);
-    }
-  }, [isMenuOpen]);
 
   const handleMenuToggle = () => {
     if (isMenuOpen) {
@@ -71,7 +65,7 @@ export default function Navbar() {
               height={36}
               className="h-9 w-9 rounded-full object-cover"
             />
-            <span className="text-sm font-semibold sm:text-base">WINGS WOMEN</span>
+            <span className="text-sm font-semibold sm:text-base">Wings Women Center</span>
           </Link>
 
           <nav aria-label="Primary" className="hidden items-center gap-2 md:flex">

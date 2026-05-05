@@ -16,12 +16,6 @@ const REQUIRED_HEADERS = [
   { name: 'Permissions-Policy', key: '', required: false },
 ];
 
-const RECOMMENDED_COOKIES = [
-  { name: 'Secure', required: true },
-  { name: 'HttpOnly', required: true },
-  { name: 'SameSite', required: true },
-];
-
 const PRODUCTION_URL = process.env.PRODUCTION_URL || 'https://www.wingswomencenter.com';
 
 async function checkSecurityHeaders(url) {

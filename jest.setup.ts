@@ -1,9 +1,9 @@
 import "@testing-library/jest-dom";
-import type React from "react";
+import React from "react";
 
 jest.mock("next/image", () => {
   return function MockImage(props: React.ImgHTMLAttributes<HTMLImageElement>) {
-    return require("react").createElement("img", { ...props, alt: props.alt ?? "" });
+    return React.createElement("img", { ...props, alt: props.alt ?? "" });
   };
 });
 

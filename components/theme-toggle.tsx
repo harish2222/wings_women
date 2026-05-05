@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
 
 function MoonIcon() {
   return (
@@ -25,17 +25,17 @@ function SunIcon() {
   );
 }
 
+function useHydrated() {
+  return useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
+}
+
 export function ThemeToggle() {
   const { setTheme, resolvedTheme } = useTheme();
-
-  const [mounted, setMounted] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return true;
-  });
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useHydrated();
 
   if (!mounted) {
     return (
