@@ -19,7 +19,11 @@ const legalLinks = [
   { href: "/terms", label: "Terms & Conditions" },
 ];
 
-const social = ["Facebook", "Instagram", "YouTube"];
+const social = [
+  { name: "Facebook", url: "https://www.facebook.com/profile.php?id=100064033661935" },
+  { name: "Instagram", url: "https://www.instagram.com/viswanathboga/" },
+  { name: "YouTube", url: "https://www.youtube.com/@bogaviswanath8031" },
+];
 
 export default function Footer() {
   return (
@@ -36,13 +40,15 @@ export default function Footer() {
             </h3>
             <ul className="mt-3 flex flex-wrap gap-2">
               {social.map((item) => (
-                <li key={item}>
+                <li key={item.name}>
                   <a
-                    href="#"
-                    aria-label={`${item} profile`}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${item.name} profile`}
                     className="inline-flex rounded-full border border-[#C8A2C8]/70 px-3 py-1 text-xs transition-colors hover:bg-[#C8A2C8]/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A47DAB] dark:border-[#B899BF]/70 dark:hover:bg-[#B899BF]/25"
                   >
-                    {item}
+                    {item.name}
                   </a>
                 </li>
               ))}
